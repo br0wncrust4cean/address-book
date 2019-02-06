@@ -48,8 +48,8 @@ public class AddressBook {
     }
 
     public static void main(String[] args) {
-        BuddyInfo b1 = new BuddyInfo("Bhavik", "1234949452");
-        BuddyInfo b2 = new BuddyInfo("Taz", "7584840303");
-        BuddyInfo b3 = new BuddyInfo("Nisaa", "3030920011");
+        BuddyInfo b1 = new BuddyInfo("Bhavik","22 dkdkdkdk", "1234949452");
+        BuddyInfo b2 = new BuddyInfo("Taz","22 dkdkdkdk", "7584840303");
+        BuddyInfo b3 = new BuddyInfo("Nisaa","22 dkdkdkdk", "3030920011");
     }
 }

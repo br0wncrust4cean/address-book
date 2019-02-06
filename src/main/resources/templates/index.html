@@ -8,10 +8,12 @@
     <table>
         <th>
             <td>Name</td>
+            <td>Address</td>
             <td>Phone Number</td>
         </th>
         <tr th:each="buddy: ${buddies}">
             <td th:text="${buddy.name}"></td>
+            <td th:text="${buddy.address}"></td>
             <td th:text="${buddy.phoneNumber}"></td>
         </tr>
     </table>

@@ -21,11 +21,11 @@ public class Application {
     public CommandLineRunner demo(BuddyInfoRepository repository) {
         return (args) -> {
             // save a couple of customers
-            repository.save(new BuddyInfo("Bauer", "12345"));
-            repository.save(new BuddyInfo("Chloe", "32333444"));
-            repository.save(new BuddyInfo("Kim", "32233232354"));
-            repository.save(new BuddyInfo("David", "333555555"));
-            repository.save(new BuddyInfo("Michelle", "332233232323"));
+            repository.save(new BuddyInfo("Bauer", "22 dkdkdkdk", "12345"));
+            repository.save(new BuddyInfo("Chloe","22 dkdkdkdk", "32333444"));
+            repository.save(new BuddyInfo("Kim","22 dkdkdkdk", "32233232354"));
+            repository.save(new BuddyInfo("David","22 dkdkdkdk", "333555555"));
+            repository.save(new BuddyInfo("Michelle","22 dkdkdkdk", "332233232323"));
 
             // fetch all customers
             log.info("Customers found with findAll():");

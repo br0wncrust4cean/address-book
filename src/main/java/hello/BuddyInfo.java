@@ -9,6 +9,7 @@ public class BuddyInfo {
     private int id;
     private String name;
     private String phoneNumber;
+    private String address;
     @ManyToOne
     private AddressBook addressBook;
 
@@ -17,8 +18,9 @@ public class BuddyInfo {
         this.phoneNumber = null;
     }
 
-    public BuddyInfo(String name, String phoneNumber) {
+    public BuddyInfo(String name, String address, String phoneNumber) {
         this.name = name;
+        this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
@@ -29,6 +31,16 @@ public class BuddyInfo {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
 
     public String getPhoneNumber() {
         return phoneNumber;
