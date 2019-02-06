@@ -9,7 +9,6 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "buddy", path="buddy")
 public interface BuddyInfoRepository extends CrudRepository<BuddyInfo, Integer> {
-    @RequestMapping("/findall")
     List<BuddyInfo> findByName(@Param("name") String name);
 
 }

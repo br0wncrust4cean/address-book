@@ -15,9 +15,9 @@ public class GUIController {
 
 
     @GetMapping("/index")
-    public ModelAndView index(Model model) {
+    public String index(Model model) {
         model.addAttribute("buddies", buddy.findAll());
-        return new ModelAndView("index");
+        return "index";
     }
 
 }
