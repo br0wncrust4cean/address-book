@@ -3,19 +3,31 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/buddyinfo.js"></script>
 </head>
 <body>
+    <form id="buddyForm" method="post" th:action="@{/index}" th:object="${newBud}" action="#" onsubmit="addBuddy(event)">
+        Add New Buddy:<br/>
+        Name: <input type="text" th:field="*{name}"/> &nbsp; Address:<input type="text" th:field="*{address}" /> &nbsp; Phone Number: <input type="text" th:field="*{phoneNumber}" /> <br/>
+        <br/>
+        <input type="submit" value="Add Buddy" />
+    </form>
     <table>
-        <th>
-            <td>Name</td>
-            <td>Address</td>
-            <td>Phone Number</td>
-        </th>
-        <tr th:each="buddy: ${buddies}">
-            <td th:text="${buddy.name}"></td>
-            <td th:text="${buddy.address}"></td>
-            <td th:text="${buddy.phoneNumber}"></td>
-        </tr>
+        <thead>
+            <th>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Phone Number</td>
+            </th>
+        </thead>
+        <tbody id="buddyRow">
+            <tr th:each="buddy: ${buddies}">
+                <td th:text="${buddy.name}"></td>
+                <td th:text="${buddy.address}"></td>
+                <td th:text="${buddy.phoneNumber}"></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>

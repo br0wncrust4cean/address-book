@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -13,9 +15,15 @@ public class GUIController {
     @Autowired
     private BuddyInfoRepository buddy;
 
+    @PostMapping("/index")
+    public String addBuddy(@ModelAttribute BuddyInfo newBud, Model model) {
+        buddy.save(newBud);
+        return this.index(model);
+    }
 
     @GetMapping("/index")
     public String index(Model model) {
+        model.addAttribute("newBud", new BuddyInfo());
         model.addAttribute("buddies", buddy.findAll());
         return "index";
     }
